@@ -1,0 +1,23 @@
+<button (click)="addEmployee()">Add New Employee</button>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Department Id</th>
+        <th>Employee Salary</th>
+        <th>Join Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let emp of employeesList">
+        <td>{{emp.id}}</td>
+        <td>{{emp.empname}}</td>
+        <td>{{emp.deptid}}</td>
+        <td>{{emp.salary}}</td>
+        <td>{{emp.joinDate}}</td>
+        <td><a (click)="editEmployee(emp.id)" class="btn btn-sm btn-primary">Edit</a></td>
+        <td><a (click)="deleteEmployee(emp.id)" class="btn btn-sm btn-danger">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
